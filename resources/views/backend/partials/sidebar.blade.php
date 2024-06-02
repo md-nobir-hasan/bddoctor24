@@ -24,7 +24,7 @@
                 -6 c469 -33 947 205 1214 605 229 342 291 790 163 1173 -24 70 -76 192 -94
                 217 -10 16 -14 14 -45 -18z"/>
               </g>
-            </svg><span class="text-gray-700">Taildash</span>
+            </svg><span class="text-gray-700">{{config('app.name')}}</span>
           </h2>
           <h2 class="hidden mx-auto text-3xl font-semibold logo-compact">
             <!-- <img class="inline-block h-auto -mt-1 w-7" src="{{asset('src/img/logo.png')}}"> -->
@@ -53,8 +53,16 @@
 
       <!-- Sidebar menu -->
       <ul id="side-menu" x-data="{ selected : 1 }" class="w-full float-none flex flex-col font-medium ps-1.5">
-        {{-- <!-- dropdown -->
         <li class="relative">
+            <a class="active block w-full py-2 px-6 clear-both whitespace-nowrap [&.active]:text-indigo-500 hover:text-indigo-500" href="{{route('dashboard')}}">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="inline-block w-4 h-4 me-2 bi bi-house-door" viewBox="0 0 16 16">
+                    <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
+                  </svg>
+                  Dashboard</a>
+          </li>
+
+          {{-- Dashboard dropdown menu  --}}
+        {{-- <li class="relative">
           <a :class="{ 'text-indigo-500': selected == 1 }" @click="selected !== 1 ? selected = 1 : selected = null" class="[&.active]:text-indigo-500 block py-2.5 px-6 hover:text-indigo-500" href="javascript:;">
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="inline-block w-4 h-4 me-2 bi bi-house-door" viewBox="0 0 16 16">
               <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>

@@ -45,7 +45,7 @@
                 <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg mb-6">
                     <div class="w-full overflow-x-auto">
                         <div class="flex-1 p-6 bg-gray-100 dark:bg-gray-900 bg-opacity-60 dark:bg-opacity-20">
-                            <form method="POST" action="{{ route('setup.consultant_type.update',$datum->id) }}"
+                            <form method="POST" action="{{ route('setup.consultant-type.update',$datum->id) }}"
                                 class="flex flex-wrap flex-row -mx-4">
                                 @csrf
                                 @method('PUT')
@@ -61,7 +61,7 @@
                                 </div>
 
                                 <div class='flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6'>
-                                                            <label for='other_info' class='inline-block mb-2'>Other Info</label> 
+                                                            <label for='other_info' class='inline-block mb-2'>Other Info</label>
                                                             <input id='other_info' type='text' name='other_info' placeholder='Exp:- Enter Other Info'
                                                                 value='{{$datum->other_info ? $datum->other_info : old('other_info') }}'
                                                                 class='w-full leading-5 relative py-2 px-4 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600'>

@@ -1,4 +1,4 @@
-@extends('admin.layout.app')
+@extends('backend.layouts.app')
 
 @push('title')
 Dashboard -
