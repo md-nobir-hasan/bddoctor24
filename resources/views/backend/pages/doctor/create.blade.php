@@ -7,6 +7,8 @@
 
 {{-- Custom Css  --}}
 @push('css')
+    {{-- @vite("resources/css/css/style.css") --}}
+    <link rel="stylesheet" href="/backend/tom-select/tom-select.min.css">
 @endpush
 
 {{-- Custom js  --}}
@@ -15,7 +17,7 @@
     {{-- <script src="{{asset('vendors/alpinejs/dist/cdn.min.js') }}"></script><!-- core js --> --}}
     {{-- <script src="{{asset('vendors/flatpickr/dist/flatpickr.min.js') }}"></script><!-- input date --> --}}
     {{-- <script src="{{asset('vendors/flatpickr/dist/plugins/rangePlugin.js') }}"></script><!-- input range date --> --}}
-    <script src="{{asset('vendors/@yaireo/tagify/dist/tagify.min.js') }}"></script><!-- input tags -->
+    {{-- <script src="{{asset('vendors/tagify/tagify.min.js') }}"></script><!-- input tags --> --}}
     {{-- <script src="{{asset('vendors/pristinejs/dist/pristine.min.js') }}"></script><!-- form validation --> --}}
     <script src="{{ asset('vendors/simple-datatables/dist/umd/simple-datatables.js') }}"></script><!--sort table-->
     <!--end::Global javascript (used in all pages)-->
@@ -29,8 +31,19 @@
     {{-- <script src="{{asset('vendors/chart.js/dist/chart.min.js') }}"></script><!-- charts --> --}}
     <!-- chart config -->
     {{-- <script src="{{asset('src/js/chart/ecommerce.js') }}"></script> --}}
-
+    {{-- Tagify codding  --}}
     @vite(['resources/js/admin/chart/chart.min.js', 'resources/js/admin/chart/ecommerce.js'])
+
+    <script src="/backend/tom-select/tom-select.complete.js"></script>
+    <script>
+       new TomSelect("#district_id",{
+            create: true,
+            sortField: {
+                field: "text",
+                direction: "asc"
+            }
+        });
+    </script>
 @endpush
 
 {{-- Page Main Content  --}}
@@ -141,10 +154,11 @@
                                         <span class='text-danger'>{{ $message }}</span>
                                     @enderror
                                 </div>
-                                {{-- <div class='form-group'>
+                                <div class='mb-6'>
                                     <label for='district_id'>District</label>
-                                    <select name='district_id' id='district_id' class='form-control'>
-                                        <option value=''>--Select any District--</option>
+
+                                    <select name='district_id' id='district_id' class='inline-block w-full leading-5 relative py-2 pl-3 pr-8 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600 select-caret appearance-none" aria-label="Default select example'>
+                                        <option value='' selected>--Select any District--</option>
                                         @foreach ($District as $key => $district_id)
                                             <option value='{{ $district_id->id }}' @selected($district_id->id == old('district_id'))>
                                                 {{ $district_id->title }}</option>
@@ -153,11 +167,9 @@
                                     @error('district_id')
                                         <span class='text-danger'>{{ $message }}</span>
                                     @enderror
-                                </div> --}}
-                                <div class="mb-6">
-                                    <label for="tagsselect" class="inline-block mb-2">Districts</label>
-                                    <input name="selectname" value="" class="tagify-select w-full leading-5 relative text-sm py-2 px-4 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600" id="tagsselect" minlength="2">
                                 </div>
+
+
                                 <div class='flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6'>
                                     <label for='other_info' class='inline-block mb-2'>Other Info</label>
                                     <input id='other_info' type='text' name='other_info'
