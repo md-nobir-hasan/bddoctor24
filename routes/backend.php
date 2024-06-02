@@ -11,3 +11,8 @@ Route::prefix('backend')->group(function () {
     });
     Route::get('/dashboard',[MicelController::class,'dashboard'])->middleware(['auth'])->name('dashboard');
 });
+
+Route::middleware('auth')->prefix('setup')->name('setup.')->group(function () {
+	Route::resource('/chamber','App\Http\Controllers\ChamberController');
+Route::resource('/chamber','App\Http\Controllers\Backend\ChamberController');
+});
