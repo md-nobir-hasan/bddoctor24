@@ -15,7 +15,7 @@
     {{-- <script src="{{asset('vendors/alpinejs/dist/cdn.min.js') }}"></script><!-- core js --> --}}
     {{-- <script src="{{asset('vendors/flatpickr/dist/flatpickr.min.js') }}"></script><!-- input date --> --}}
     {{-- <script src="{{asset('vendors/flatpickr/dist/plugins/rangePlugin.js') }}"></script><!-- input range date --> --}}
-    {{-- <script src="{{asset('vendors/%40yaireo/tagify/dist/tagify.min.js') }}"></script><!-- input tags --> --}}
+    <script src="{{asset('vendors/@yaireo/tagify/dist/tagify.min.js') }}"></script><!-- input tags -->
     {{-- <script src="{{asset('vendors/pristinejs/dist/pristine.min.js') }}"></script><!-- form validation --> --}}
     <script src="{{ asset('vendors/simple-datatables/dist/umd/simple-datatables.js') }}"></script><!--sort table-->
     <!--end::Global javascript (used in all pages)-->
@@ -45,8 +45,7 @@
                 <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg mb-6">
                     <div class="w-full overflow-x-auto">
                         <div class="flex-1 p-6 bg-gray-100 dark:bg-gray-900 bg-opacity-60 dark:bg-opacity-20">
-                            <form method="POST" action="{{ route('doctor.store') }}"
-                                class="flex flex-wrap flex-row -mx-4">
+                            <form method="POST" action="{{ route('doctor.store') }}" class="flex flex-wrap flex-row -mx-4">
                                 @csrf
                                 {{--  Title --}}
                                 <div class="flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6">
@@ -60,93 +59,114 @@
                                 </div>
 
                                 <div class='form-group'>
-                                                    <label for='designation_id'>Designation</label> 
-                                                    <select name='designation_id' id='designation_id' class='form-control'  >
-                                                        <option value=''>--Select any Designation--</option>
-                                                        @foreach ($Designation as $key => $designation_id)
-                                                            <option value='{{ $designation_id->id }}' @selected($designation_id->id == old('designation_id'))>{{ $designation_id->title }}</option>
-                                                        @endforeach
-                                                    </select>
-                                                    @error('designation_id')
-                                                        <span class='text-danger'>{{ $message }}</span>
-                                                    @enderror
-                                                </div><div class='form-group'>
-                                                    <label for='category_id'>Category</label><span class="text-danger">*</span></label>
-                                                    <select name='category_id' id='category_id' class='form-control' required>
-                                                        <option value=''>--Select any Category--</option>
-                                                        @foreach ($Category as $key => $category_id)
-                                                            <option value='{{ $category_id->id }}' @selected($category_id->id == old('category_id'))>{{ $category_id->title }}</option>
-                                                        @endforeach
-                                                    </select>
-                                                    @error('category_id')
-                                                        <span class='text-danger'>{{ $message }}</span>
-                                                    @enderror
-                                                </div><div class='flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6'>
-                                                            <label for='gendar' class='inline-block mb-2'>Gendar</label> 
-                                                            <input id='gendar' type='text' name='gendar' placeholder='Exp:- Enter Gendar'
-                                                                value='{{ old('gendar') }}' class='w-full leading-5 relative py-2 px-4 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600'>
-                                                            @error('gendar')
-                                                                <span class='text-danger'>{{ $message }}</span>
-                                                            @enderror
-                                                        </div><div class='flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6'>
-                                                            <label for='experience' class='inline-block mb-2'>Experience</label> 
-                                                            <input id='experience' type='text' name='experience' placeholder='Exp:- Enter Experience'
-                                                                value='{{ old('experience') }}' class='w-full leading-5 relative py-2 px-4 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600'>
-                                                            @error('experience')
-                                                                <span class='text-danger'>{{ $message }}</span>
-                                                            @enderror
-                                                        </div><div class='form-group'>
-                                                    <label for='degree_id'>Degree</label> 
-                                                    <select name='degree_id' id='degree_id' class='form-control'  >
-                                                        <option value=''>--Select any Degree--</option>
-                                                        @foreach ($Degree as $key => $degree_id)
-                                                            <option value='{{ $degree_id->id }}' @selected($degree_id->id == old('degree_id'))>{{ $degree_id->title }}</option>
-                                                        @endforeach
-                                                    </select>
-                                                    @error('degree_id')
-                                                        <span class='text-danger'>{{ $message }}</span>
-                                                    @enderror
-                                                </div><div class='form-group'>
-                                                    <label for='consultant_type_id'>ConsultantType</label> 
-                                                    <select name='consultant_type_id' id='consultant_type_id' class='form-control'  >
-                                                        <option value=''>--Select any ConsultantType--</option>
-                                                        @foreach ($ConsultantType as $key => $consultant_type_id)
-                                                            <option value='{{ $consultant_type_id->id }}' @selected($consultant_type_id->id == old('consultant_type_id'))>{{ $consultant_type_id->title }}</option>
-                                                        @endforeach
-                                                    </select>
-                                                    @error('consultant_type_id')
-                                                        <span class='text-danger'>{{ $message }}</span>
-                                                    @enderror
-                                                </div><div class='form-group'>
-                                                    <label for='chamber_id'>Chamber</label><span class="text-danger">*</span></label>
-                                                    <select name='chamber_id' id='chamber_id' class='form-control' required>
-                                                        <option value=''>--Select any Chamber--</option>
-                                                        @foreach ($Chamber as $key => $chamber_id)
-                                                            <option value='{{ $chamber_id->id }}' @selected($chamber_id->id == old('chamber_id'))>{{ $chamber_id->title }}</option>
-                                                        @endforeach
-                                                    </select>
-                                                    @error('chamber_id')
-                                                        <span class='text-danger'>{{ $message }}</span>
-                                                    @enderror
-                                                </div><div class='form-group'>
-                                                    <label for='district_id'>District</label> 
-                                                    <select name='district_id' id='district_id' class='form-control'  >
-                                                        <option value=''>--Select any District--</option>
-                                                        @foreach ($District as $key => $district_id)
-                                                            <option value='{{ $district_id->id }}' @selected($district_id->id == old('district_id'))>{{ $district_id->title }}</option>
-                                                        @endforeach
-                                                    </select>
-                                                    @error('district_id')
-                                                        <span class='text-danger'>{{ $message }}</span>
-                                                    @enderror
-                                                </div><div class='flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6'>
-                                                            <label for='other_info' class='inline-block mb-2'>Other Info</label> 
-                                                            <input id='other_info' type='text' name='other_info' placeholder='Exp:- Enter Other Info'
-                                                                value='{{ old('other_info') }}' class='w-full leading-5 relative py-2 px-4 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600'>
-                                                            @error('other_info')
-                                                                <span class='text-danger'>{{ $message }}</span>
-                                                            @enderror
-                                                        </div>
+                                    <label for='designation_id'>Designation</label>
+                                    <select name='designation_id' id='designation_id' class='form-control'>
+                                        <option value=''>--Select any Designation--</option>
+                                        @foreach ($Designation as $key => $designation_id)
+                                            <option value='{{ $designation_id->id }}' @selected($designation_id->id == old('designation_id'))>
+                                                {{ $designation_id->title }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('designation_id')
+                                        <span class='text-danger'>{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class='form-group'>
+                                    <label for='category_id'>Category</label><span class="text-danger">*</span></label>
+                                    <select name='category_id' id='category_id' class='form-control' required>
+                                        <option value=''>--Select any Category--</option>
+                                        @foreach ($Category as $key => $category_id)
+                                            <option value='{{ $category_id->id }}' @selected($category_id->id == old('category_id'))>
+                                                {{ $category_id->title }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('category_id')
+                                        <span class='text-danger'>{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class='flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6'>
+                                    <label for='gendar' class='inline-block mb-2'>Gendar</label>
+                                    <input id='gendar' type='text' name='gendar' placeholder='Exp:- Enter Gendar'
+                                        value='{{ old('gendar') }}'
+                                        class='w-full leading-5 relative py-2 px-4 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600'>
+                                    @error('gendar')
+                                        <span class='text-danger'>{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class='flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6'>
+                                    <label for='experience' class='inline-block mb-2'>Experience</label>
+                                    <input id='experience' type='text' name='experience'
+                                        placeholder='Exp:- Enter Experience' value='{{ old('experience') }}'
+                                        class='w-full leading-5 relative py-2 px-4 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600'>
+                                    @error('experience')
+                                        <span class='text-danger'>{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class='form-group'>
+                                    <label for='degree_id'>Degree</label>
+                                    <select name='degree_id' id='degree_id' class='form-control'>
+                                        <option value=''>--Select any Degree--</option>
+                                        @foreach ($Degree as $key => $degree_id)
+                                            <option value='{{ $degree_id->id }}' @selected($degree_id->id == old('degree_id'))>
+                                                {{ $degree_id->title }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('degree_id')
+                                        <span class='text-danger'>{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class='form-group'>
+                                    <label for='consultant_type_id'>ConsultantType</label>
+                                    <select name='consultant_type_id' id='consultant_type_id' class='form-control'>
+                                        <option value=''>--Select any ConsultantType--</option>
+                                        @foreach ($ConsultantType as $key => $consultant_type_id)
+                                            <option value='{{ $consultant_type_id->id }}' @selected($consultant_type_id->id == old('consultant_type_id'))>
+                                                {{ $consultant_type_id->title }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('consultant_type_id')
+                                        <span class='text-danger'>{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class='form-group'>
+                                    <label for='chamber_id'>Chamber</label><span class="text-danger">*</span></label>
+                                    <select name='chamber_id' id='chamber_id' class='form-control' required>
+                                        <option value=''>--Select any Chamber--</option>
+                                        @foreach ($Chamber as $key => $chamber_id)
+                                            <option value='{{ $chamber_id->id }}' @selected($chamber_id->id == old('chamber_id'))>
+                                                {{ $chamber_id->title }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('chamber_id')
+                                        <span class='text-danger'>{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                {{-- <div class='form-group'>
+                                    <label for='district_id'>District</label>
+                                    <select name='district_id' id='district_id' class='form-control'>
+                                        <option value=''>--Select any District--</option>
+                                        @foreach ($District as $key => $district_id)
+                                            <option value='{{ $district_id->id }}' @selected($district_id->id == old('district_id'))>
+                                                {{ $district_id->title }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('district_id')
+                                        <span class='text-danger'>{{ $message }}</span>
+                                    @enderror
+                                </div> --}}
+                                <div class="mb-6">
+                                    <label for="tagsselect" class="inline-block mb-2">Districts</label>
+                                    <input name="selectname" value="" class="tagify-select w-full leading-5 relative text-sm py-2 px-4 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600" id="tagsselect" minlength="2">
+                                </div>
+                                <div class='flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6'>
+                                    <label for='other_info' class='inline-block mb-2'>Other Info</label>
+                                    <input id='other_info' type='text' name='other_info'
+                                        placeholder='Exp:- Enter Other Info' value='{{ old('other_info') }}'
+                                        class='w-full leading-5 relative py-2 px-4 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600'>
+                                    @error('other_info')
+                                        <span class='text-danger'>{{ $message }}</span>
+                                    @enderror
+                                </div>
 
                                 {{--  serial --}}
                                 <div class="flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6">
