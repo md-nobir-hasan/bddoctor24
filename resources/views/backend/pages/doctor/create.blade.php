@@ -71,9 +71,9 @@
                                     @enderror
                                 </div>
 
-                                <div class='form-group'>
+                                <div class='flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6'>
                                     <label for='designation_id'>Designation</label>
-                                    <select name='designation_id' id='designation_id' class='form-control'>
+                                    <select name='designation_id' id='designation_id' class='inline-block w-full leading-5 relative py-2 pl-3 pr-8 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600 select-caret appearance-none'>
                                         <option value=''>--Select any Designation--</option>
                                         @foreach ($Designation as $key => $designation_id)
                                             <option value='{{ $designation_id->id }}' @selected($designation_id->id == old('designation_id'))>
@@ -84,9 +84,9 @@
                                         <span class='text-danger'>{{ $message }}</span>
                                     @enderror
                                 </div>
-                                <div class='form-group'>
+                                <div class='flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6'>
                                     <label for='category_id'>Category</label><span class="text-danger">*</span></label>
-                                    <select name='category_id' id='category_id' class='form-control' required>
+                                    <select name='category_id' id='category_id' class='inline-block w-full leading-5 relative py-2 pl-3 pr-8 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600 select-caret appearance-none' required>
                                         <option value=''>--Select any Category--</option>
                                         @foreach ($Category as $key => $category_id)
                                             <option value='{{ $category_id->id }}' @selected($category_id->id == old('category_id'))>
@@ -115,9 +115,9 @@
                                         <span class='text-danger'>{{ $message }}</span>
                                     @enderror
                                 </div>
-                                <div class='form-group'>
+                                <div class='flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6'>
                                     <label for='degree_id'>Degree</label>
-                                    <select name='degree_id' id='degree_id' class='form-control'>
+                                    <select name='degree_id' id='degree_id' class='inline-block w-full leading-5 relative py-2 pl-3 pr-8 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600 select-caret appearance-none'>
                                         <option value=''>--Select any Degree--</option>
                                         @foreach ($Degree as $key => $degree_id)
                                             <option value='{{ $degree_id->id }}' @selected($degree_id->id == old('degree_id'))>
@@ -128,9 +128,9 @@
                                         <span class='text-danger'>{{ $message }}</span>
                                     @enderror
                                 </div>
-                                <div class='form-group'>
+                                <div class='flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6'>
                                     <label for='consultant_type_id'>ConsultantType</label>
-                                    <select name='consultant_type_id' id='consultant_type_id' class='form-control'>
+                                    <select name='consultant_type_id' id='consultant_type_id' class='inline-block w-full leading-5 relative py-2 pl-3 pr-8 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600 select-caret appearance-none'>
                                         <option value=''>--Select any ConsultantType--</option>
                                         @foreach ($ConsultantType as $key => $consultant_type_id)
                                             <option value='{{ $consultant_type_id->id }}' @selected($consultant_type_id->id == old('consultant_type_id'))>
@@ -141,9 +141,9 @@
                                         <span class='text-danger'>{{ $message }}</span>
                                     @enderror
                                 </div>
-                                <div class='form-group'>
+                                <div class='flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6'>
                                     <label for='chamber_id'>Chamber</label><span class="text-danger">*</span></label>
-                                    <select name='chamber_id' id='chamber_id' class='form-control' required>
+                                    <select name='chamber_id' id='chamber_id' class='inline-block w-full leading-5 relative py-2 pl-3 pr-8 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600 select-caret appearance-none' required>
                                         <option value=''>--Select any Chamber--</option>
                                         @foreach ($Chamber as $key => $chamber_id)
                                             <option value='{{ $chamber_id->id }}' @selected($chamber_id->id == old('chamber_id'))>
@@ -157,7 +157,7 @@
                                 <div class='mb-6'>
                                     <label for='district_id'>District</label>
 
-                                    <select name='district_id' id='district_id' class='inline-block w-full leading-5 relative py-2 pl-3 pr-8 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600 select-caret appearance-none" aria-label="Default select example'>
+                                    <select name='district_id' id='district_id' class='inline-block w-full leading-5 relative py-2 pl-3 pr-8 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600 select-caret appearance-none'>
                                         <option value='' selected>--Select any District--</option>
                                         @foreach ($District as $key => $district_id)
                                             <option value='{{ $district_id->id }}' @selected($district_id->id == old('district_id'))>
