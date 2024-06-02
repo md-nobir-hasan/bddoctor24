@@ -13,8 +13,15 @@ Route::prefix('backend')->group(function () {
 });
 
 Route::middleware('auth')->prefix('setup')->name('setup.')->group(function () {
-	Route::resource('/designation','App\Http\Controllers\DesignationController');
+	Route::resource('/degree','App\Http\Controllers\DegreeController');
+Route::resource('/degree','App\Http\Controllers\Backend\DegreeController');
+Route::resource('/designation','App\Http\Controllers\DesignationController');
 Route::resource('/designation','App\Http\Controllers\Backend\DesignationController');
 Route::resource('/chamber','App\Http\Controllers\ChamberController');
 Route::resource('/chamber','App\Http\Controllers\Backend\ChamberController');
+});
+
+Route::middleware('auth')->group(function () {
+	Route::resource('/doctor','App\Http\Controllers\DoctorController');
+Route::resource('/doctor','App\Http\Controllers\Backend\DoctorController');
 });
