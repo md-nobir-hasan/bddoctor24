@@ -13,6 +13,8 @@ Route::prefix('backend')->group(function () {
 });
 
 Route::middleware('auth')->prefix('setup')->name('setup.')->group(function () {
-	Route::resource('/chamber','App\Http\Controllers\ChamberController');
+	Route::resource('/designation','App\Http\Controllers\DesignationController');
+Route::resource('/designation','App\Http\Controllers\Backend\DesignationController');
+Route::resource('/chamber','App\Http\Controllers\ChamberController');
 Route::resource('/chamber','App\Http\Controllers\Backend\ChamberController');
 });
