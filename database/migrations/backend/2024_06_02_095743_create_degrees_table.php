@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('degrees', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('title',500);
             $table->text('other_info')->nullable();
 			$table->boolean('is_special')->nullable();
             $table->unsignedBigInteger('serial');
