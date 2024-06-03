@@ -19,7 +19,7 @@ class DoctorController extends Controller
      */
     public function index()
     {
-        $n['data'] = Doctor::orderBy('serial', 'desc')
+        $n['data'] = Doctor::with(['Designation','Category','Degree','ConsultantType','Chamber','District'])->where('status','Active')->orderBy('serial', 'desc')
                                 ->paginate(10);
         $n['count'] = Doctor::all();
         return view('backend.pages.doctor.index', $n);
@@ -74,6 +74,12 @@ class DoctorController extends Controller
      */
     public function edit(Doctor $Doctor)
     {
+        $n['Designation'] = DB::table('designations')->where('status','Active')->orderBy('serial','desc')->get();
+        $n['Category'] = DB::table('categories')->where('status','Active')->orderBy('serial','desc')->get();
+        $n['Degree'] = DB::table('degrees')->where('status','Active')->orderBy('serial','desc')->get();
+        $n['ConsultantType'] = DB::table('consultant_types')->where('status','Active')->orderBy('serial','desc')->get();
+        $n['Chamber'] = DB::table('chambers')->where('status','Active')->orderBy('serial','desc')->get();
+        $n['District'] = DB::table('districts')->where('status','Active')->orderBy('serial','desc')->get();
         $n['datum'] = $Doctor;
         return view('backend.pages.doctor.edit', $n);
     }

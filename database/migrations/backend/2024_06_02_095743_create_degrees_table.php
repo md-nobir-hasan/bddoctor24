@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('other_info')->nullable();
-			$table->boolean('is_special');
+			$table->boolean('is_special')->nullable();
             $table->unsignedBigInteger('serial');
             $table->enum('status',['Active','Inactive'])->default('Active');
             $table->softDeletes();

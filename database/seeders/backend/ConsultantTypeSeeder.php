@@ -15,13 +15,16 @@ class ConsultantTypeSeeder extends Seeder
     {
         $data = [
          [
-             'title'=>'Video'
+             'title'=>'Video',
+             'serial' => 1,
          ],
          [
-             'title'=>'Chamber'
+             'title'=>'Chamber',
+             'serial' => 2,
          ],
          [
-             'title'=>'Audio'
+             'title'=>'Audio',
+             'serial' => 3,
          ]
          ];
          DB::table('consultant_types')->insert($data);

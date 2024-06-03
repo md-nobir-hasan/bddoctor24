@@ -98,6 +98,19 @@
                                     @enderror
                                 </div>
                                 <div class='flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6'>
+                                    <label for='gendar'>Gendar</label>
+                                    <select name='gendar' id='gendar' class='inline-block w-full leading-5 relative py-2 pl-3 pr-8 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600 select-caret appearance-none'>
+                                        <option value=''>--Select any Designation--</option>
+                                            <option value='Male' @selected('Male' == old('gendar'))>Male</option>
+                                            <option value='Female' @selected('Female' == old('gendar'))>Female</option>
+                                            <option value='Other' @selected('Other' == old('gendar'))>Other</option>
+                                    </select>
+                                    @error('gendar')
+                                        <span class='text-danger'>{{ $message }}</span>
+                                    @enderror
+                                </div>
+
+                                {{-- <div class='flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6'>
                                     <label for='gendar' class='inline-block mb-2'>Gendar</label>
                                     <input id='gendar' type='text' name='gendar' placeholder='Exp:- Enter Gendar'
                                         value='{{ old('gendar') }}'
@@ -105,7 +118,8 @@
                                     @error('gendar')
                                         <span class='text-danger'>{{ $message }}</span>
                                     @enderror
-                                </div>
+                                </div> --}}
+                                
                                 <div class='flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6'>
                                     <label for='experience' class='inline-block mb-2'>Experience</label>
                                     <input id='experience' type='text' name='experience'

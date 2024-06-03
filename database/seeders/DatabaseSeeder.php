@@ -2,15 +2,13 @@
 
 namespace Database\Seeders;
 
-use Database\Seeders\Admin\CategorySeeder;
 use Database\Seeders\backend\DistrictSeeder;
-use Database\Seeders\Admin\DesignationSeeder;
-use Database\Seeders\Admin\UserSeeder;
-use Database\Seeders\Admin\ConsultantTypeSeeder;
-use Database\Seeders\Admin\DegreeSeeder;
-use App\Models\User;
+use Database\Seeders\Backend\CategorySeeder;
+use Database\Seeders\Backend\ChamberSeeder;
+use Database\Seeders\Backend\ConsultantTypeSeeder;
+use Database\Seeders\Backend\DegreeSeeder;
+use Database\Seeders\Backend\DesignationSeeder;
 use Database\Seeders\Backend\SidebarSeeder;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -24,10 +22,11 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             DistrictSeeder::class,
             SidebarSeeder::class,
-            // DesignationSeeder::class,
-            // DegreeSeeder::class,
-            // CategorySeeder::class,
-            // ConsultantTypeSeeder::class
+            DesignationSeeder::class,
+            DegreeSeeder::class,
+            CategorySeeder::class,
+            ConsultantTypeSeeder::class,
+            ChamberSeeder::class
         ]);//n
     }
 }

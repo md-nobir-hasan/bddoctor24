@@ -20,17 +20,20 @@ class DegreeSeeder extends Seeder
                     Fellow (Pain & Paralysis). President Gold Medalist & Special Training in
                     Acupuncture",
                     'other_info'=>'',
-                    'status'=>1
+                    'serial'=>1,
+                    'status'=>"Active"
                 ],
                 [
                     'title'=>"MBBS (DMC), PhD (Anesthesiology, Japan)",
                     'other_info'=>'',
-                    'status'=>1
+                    'serial'=>2,
+                    'status'=>"Active"
                 ],
                 [
                     'title'=>"MBBS, FCPS (Anesthesiology), Training (Japan)",
                     'other_info'=>'',
-                    'status'=>1
+                    'serial'=>3,
+                    'status'=>"Active"
                 ],
                 [
                     'title'=>"MBBS, BCS (Health), DA (BSMMU), FAPM (India), Member (IASP), Member
@@ -38,17 +41,20 @@ class DegreeSeeder extends Seeder
                     India), Member (EULAR-Rheumatology), Editorial Board Member (Bangladesh
                     Journal of Pain), Advance Trained on MSK Ultrasound",
                     'other_info'=>'',
-                    'status'=>1
+                    'serial'=>4,
+                    'status'=>"Active"
                 ],
                 [
                     'title'=>"MBBS, DA, MCPS, FCPS (Anesthesiology)",
                     'other_info'=>'',
-                    'status'=>1
+                    'serial'=>5,
+                    'status'=>"Active"
                 ],
                 [
                     'title'=>"MBBS, DA (DU), FIPM (India), Fellowship in Pain Management (India)",
                     'other_info'=>'',
-                    'status'=>1
+                    'serial'=>6,
+                    'status'=>"Active"
                 ],
                 [
                     'title'=>"MBBS, BCS (Health), DA, MD (BSMMU), Member (IASP), Member (BSSP)
@@ -56,17 +62,20 @@ class DegreeSeeder extends Seeder
                     Daradia, India), Member (EULAR-Rheumatology), Editorial Board Member
                     (Bangladesh Journal of Pain), Advance Trained on MSK Ultrasound",
                     'other_info'=>'',
-                    'status'=>1
+                    'serial'=>7,
+                    'status'=>"Active"
                 ],
                 [
                     'title'=>"MBBS, DA, MD, FCPS",
                     'other_info'=>'',
-                    'status'=>1
+                    'serial'=>8,
+                    'status'=>"Active"
                 ],
                 [
                     'title'=>"MBBS (DNMC), DA (DMC), FCPS (Anesthesiology)",
                     'other_info'=>'',
-                    'status'=>1
+                    'serial'=>9,
+                    'status'=>"Active"
                 ],
             ];
         DB::table('degrees')->insert($data);
