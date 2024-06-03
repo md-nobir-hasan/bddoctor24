@@ -2,13 +2,13 @@
 
 namespace Database\Seeders;
 
-use Database\Seeders\Backend\DistrictSeeder;
-use Database\Seeders\Backend\CategorySeeder;
-use Database\Seeders\Backend\ChamberSeeder;
-use Database\Seeders\Backend\ConsultantTypeSeeder;
-use Database\Seeders\Backend\DegreeSeeder;
-use Database\Seeders\Backend\DesignationSeeder;
-use Database\Seeders\Backend\SidebarSeeder;
+use Database\Seeders\backend\DistrictSeeder;
+use Database\Seeders\backend\CategorySeeder;
+use Database\Seeders\backend\ChamberSeeder;
+use Database\Seeders\backend\ConsultantTypeSeeder;
+use Database\Seeders\backend\DegreeSeeder;
+use Database\Seeders\backend\DesignationSeeder;
+use Database\Seeders\backend\SidebarSeeder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
