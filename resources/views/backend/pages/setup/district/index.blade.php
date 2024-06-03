@@ -17,7 +17,7 @@
     {{-- <script src="{{asset('vendors/flatpickr/dist/plugins/rangePlugin.js') }}"></script><!-- input range date --> --}}
     {{-- <script src="{{asset('vendors/%40yaireo/tagify/dist/tagify.min.js') }}"></script><!-- input tags --> --}}
     {{-- <script src="{{asset('vendors/pristinejs/dist/pristine.min.js') }}"></script><!-- form validation --> --}}
-    <script src="{{ asset('vendors/simple-datatables/dist/umd/simple-datatables.js') }}"></script><!--sort table-->
+    {{-- <script src="{{ asset('vendors/simple-datatables/dist/umd/simple-datatables.js') }}"></script><!--sort table--> --}}
     <!--end::Global javascript (used in all pages)-->
 
     <!-- Minify Global javascript (for production purpose) -->
@@ -30,7 +30,7 @@
     <!-- chart config -->
     {{-- <script src="{{asset('src/js/chart/ecommerce.js') }}"></script> --}}
 
-    @vite(['resources/js/admin/chart/chart.min.js', 'resources/js/admin/chart/ecommerce.js'])
+    {{-- @vite(['resources/js/admin/chart/chart.min.js', 'resources/js/admin/chart/ecommerce.js']) --}}
 @endpush
 
 {{-- Page Main Content  --}}
@@ -106,7 +106,7 @@
                                                                 style="width: 49.5287%;">
                                                                 <a href="#" class="dataTable-sorter">Title</a>
                                                             </th>
-                                                            
+
                                                             <th class="hidden lg:table-cell" data-sortable=""
                                                                 style="width: 11.3967%;"><a href="#"
                                                                     class="dataTable-sorter">Serial</a></th>
@@ -145,7 +145,7 @@
                                                                         </div>
                                                                     </a>
                                                                 </td>
-                                                                
+
 
                                                                 <td class="text-center">{{ $datum->serial }}
                                                                 <td class="text-center">{{ $datum->status }}

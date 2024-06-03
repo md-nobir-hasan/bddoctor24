@@ -1,2 +1,2 @@
-<script src="{{ asset('src/js/customizer.js') }}"></script>
-    
+{{-- <script src="{{ asset('src/js/customizer.js') }}"></script> --}}
+
