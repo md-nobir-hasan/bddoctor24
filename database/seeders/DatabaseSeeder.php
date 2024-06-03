@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Database\Seeders\backend\DistrictSeeder;
+use Database\Seeders\Backend\DistrictSeeder;
 use Database\Seeders\Backend\CategorySeeder;
 use Database\Seeders\Backend\ChamberSeeder;
 use Database\Seeders\Backend\ConsultantTypeSeeder;
