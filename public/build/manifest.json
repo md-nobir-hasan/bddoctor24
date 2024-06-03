@@ -1,0 +1,30 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-DkW62ovM.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/css/style.css": {
+    "file": "assets/style-DSl-j9qO.css",
+    "src": "resources/css/css/style.css",
+    "isEntry": true
+  },
+  "resources/js/admin/chart/chart.min.js": {
+    "file": "assets/chart.min-BSpl0aZp.js",
+    "name": "chart.min",
+    "src": "resources/js/admin/chart/chart.min.js",
+    "isEntry": true
+  },
+  "resources/js/admin/chart/ecommerce.js": {
+    "file": "assets/ecommerce-Bq9qYRV7.js",
+    "name": "ecommerce",
+    "src": "resources/js/admin/chart/ecommerce.js",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-Bg1aHGgo.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  }
+}
