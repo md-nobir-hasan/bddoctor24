@@ -30,7 +30,7 @@
     <!-- chart config -->
     {{-- <script src="{{asset('src/js/chart/ecommerce.js') }}"></script> --}}
 
-    @vite(['resources/js/admin/chart/chart.min.js', 'resources/js/admin/chart/ecommerce.js'])
+    {{-- @vite(['resources/js/admin/chart/chart.min.js', 'resources/js/admin/chart/ecommerce.js']) --}}
 @endpush
 
 {{-- Page Main Content  --}}

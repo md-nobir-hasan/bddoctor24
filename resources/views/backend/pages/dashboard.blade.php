@@ -9,10 +9,10 @@ Dashboard -
 @endpush
 
 @push('js')
-@vite([
+{{-- @vite([
     'resources/js/admin/chart/chart.min.js',
     'resources/js/admin/chart/ecommerce.js',
-])
+]) --}}
 @endpush
 @section('main')
     <div class="py-2 mx-auto sm:px-2">

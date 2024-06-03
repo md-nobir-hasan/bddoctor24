@@ -2840,9 +2840,7 @@ video {
 .ease-out {
   transition-timing-function:cubic-bezier(0, 0, 0.2, 1);
 }
-.\[-\:\.\\w\] {
-  -:.\w;
-}
+
 
 /*! purgecss start ignore */
 /* Circle progress */
@@ -2863,9 +2861,9 @@ video {
 }
 
 /* widget funnel  */
-.funnel-area li span{ 
+.funnel-area li span{
   border-top-width: 40px;
-  border-left: 12.5px solid transparent; 
+  border-left: 12.5px solid transparent;
   border-right:12.5px solid transparent;
 }
 .funnel-area ul li:last-child span{

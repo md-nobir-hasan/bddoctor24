@@ -15,9 +15,9 @@ Route::middleware('auth')->prefix('setup')->name('setup.')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::resource('/doctor', 'App\Http\Controllers\DoctorController');
     Route::resource('/doctor', 'App\Http\Controllers\Backend\DoctorController');
-    Route::get('/', [MicelController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
 });
 // });
+Route::get('/', [MicelController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
 
 
 

@@ -6,10 +6,10 @@ export default defineConfig({
         laravel({
             input: [
                 "resources/css/app.css",
-                "resources/css/css/style.css",
                 "resources/js/app.js",
-                "resources/js/admin/chart/chart.min.js",
-                "resources/js/admin/chart/ecommerce.js",
+                // "resources/css/css/style.css",
+                // "resources/js/admin/chart/chart.min.js",
+                // "resources/js/admin/chart/ecommerce.js",
                 // "resources/js/admin/flatpickr/dist/flatpickr.min.js",
                 // "resources/js/admin/flatpickr/dist/plugins/rangePlugin.js",
                 // "resources/js/admin/tagify/tagify.min.js",
@@ -22,3 +22,4 @@ export default defineConfig({
         }),
     ],
 });
+
