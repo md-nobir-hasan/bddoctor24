@@ -7,9 +7,9 @@ export default defineConfig({
             input: [
                 "resources/css/app.css",
                 "resources/js/app.js",
-                // "resources/css/css/style.css",
-                // "resources/js/admin/chart/chart.min.js",
-                // "resources/js/admin/chart/ecommerce.js",
+                "resources/css/css/style.css",
+                "resources/js/admin/chart/chart.min.js",
+                "resources/js/admin/chart/ecommerce.js",
                 // "resources/js/admin/flatpickr/dist/flatpickr.min.js",
                 // "resources/js/admin/flatpickr/dist/plugins/rangePlugin.js",
                 // "resources/js/admin/tagify/tagify.min.js",

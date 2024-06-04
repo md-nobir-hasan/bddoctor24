@@ -10,8 +10,8 @@
     <title>@stack('title') {{ config('app.name') }}</title>
     <meta name="description" content="A super laravel admin panel">
     <!-- google font -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
-    @include('backend.partials.css')
+    {{-- <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&amp;display=swap" rel="stylesheet"> --}}
+    {{-- @include('backend.partials.css') --}}
     @stack('css')
 </head>
 
@@ -21,24 +21,24 @@
 
         {{-- Sidebar.blade.php --}}
         <!-- sidebar -->
-        @include('backend.partials.sidebar')
+        {{-- @include('backend.partials.sidebar') --}}
 
         <div x-bind:aria-expanded="sidebar"
             :class="{ 'ms-64 -me-64 md:ms-0 md:me-0': sidebar, 'ms-0 me-0 md:ms-64': !(sidebar) }"
             class="flex flex-col min-h-screen transition-all duration-500 ease-in-out me-0 md:ms-64">
             <!-- Navbar -->
             {{-- navbar.blade.php  --}}
-            @include('backend.partials.navbar')
+            {{-- @include('backend.partials.navbar') --}}
             <!-- End Navbar -->
             <div class="flex flex-col min-h-screen ">
                 <main class="pt-20 -mt-2 mb-1">
                     @yield('main')
                 </main>
-                @include('backend.partials.footer')
+                {{-- @include('backend.partials.footer') --}}
             </div>
         </div>
     </div>
-    @include('backend.partials.js')
+    {{-- @include('backend.partials.js') --}}
     @stack('js')
 </body>
 
