@@ -153,7 +153,7 @@
                                                                 </td>
 
                                                                 <td class="text-center">
-                                                                    <form method="POST" action="{{ route('setup.consultant_type.destroy', [$datum->id]) }}">
+                                                                    <form method="POST" action="{{ route('setup.consultant-type.destroy', [$datum->id]) }}">
                                                                         @csrf
                                                                         @method('delete')
                                                                         <button
