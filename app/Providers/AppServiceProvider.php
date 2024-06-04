@@ -27,10 +27,10 @@ class AppServiceProvider extends ServiceProvider
             database_path('migrations/backend'),
         ]);
 
-        Cache::forget('nsidebar');
-        Cache::rememberForever('nsidebar', function () {
-            return NSidebar::with('child_bar')->where('is_parent', true)->where('status', 'Active')->get();
-        });
+        // Cache::forget('nsidebar');
+        // Cache::rememberForever('nsidebar', function () {
+        //     return NSidebar::with('child_bar')->where('is_parent', true)->where('status', 'Active')->get();
+        // });
         $sidebar_lists = Cache::get('nsidebar') ?? [];
 
         view()->share('sidebar_lists',$sidebar_lists);
