@@ -172,7 +172,7 @@
                                                                             </svg>
                                                                         </button>
                                                                     </form>
-                                                                    <a href="{{ route('setup.consultant_type.edit', $datum->id) }}"
+                                                                    <a href="{{ route('setup.consultant-type.edit', $datum->id) }}"
                                                                         class="inline-block ltr:mr-2 rtl:ml-2 hover:text-green-500"
                                                                         title="Edit">
                                                                         <svg xmlns="http://www.w3.org/2000/svg"
