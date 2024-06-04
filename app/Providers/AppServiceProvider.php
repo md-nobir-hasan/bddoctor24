@@ -29,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
 
         Cache::forget('nsidebar');
         Cache::rememberForever('nsidebar', function () {
-            return NSidebar::with('child_bar')->where('is_parent', 1)->where('status', 'Active')->get();
+            return NSidebar::with('child_bar')->where('is_parent', true)->where('status', 'Active')->get();
         });
         $sidebar_lists = Cache::get('nsidebar') ?? [];
 
