@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Resources\DistrictCollection;
-use App\Models\Backend\District;
+use App\Http\Controllers\Api\FetchDataController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -10,6 +9,10 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 //routes without authentication
-Route::get('/districts',function(){
-    return new DistrictCollection(District::where('status','Active')->get());
-});
+Route::get('/districts',[FetchDataController::class,'district']);
+Route::get('/categories',[FetchDataController::class,'category']);
+Route::get('/chambers',[FetchDataController::class,'chamber']);
+Route::get('/consultant-types',[FetchDataController::class,'consultantType']);
+Route::get('/degrees',[FetchDataController::class,'Degree']);
+Route::get('/designations',[FetchDataController::class,'Designation']);
+Route::get('/doctors',[FetchDataController::class,'Doctor']);
