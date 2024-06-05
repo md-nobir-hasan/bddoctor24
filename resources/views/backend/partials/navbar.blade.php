@@ -116,17 +116,7 @@
                 </svg></div>
               </div>
             </div>
-            <div class="px-6 pt-6">
-              <div x-data="{ open: true }" x-show="open" class="relative flex items-center justify-between p-3 mb-4 text-yellow-900 bg-yellow-100 rounded-lg">
-                <div>
-                  How to apply? please read the documentation on <a href="/docs/customize.html" class="font-semibold underline">Customize page</a>
-                </div>
-                <button type="button" @click="open = false">
-                  <span class="text-2xl">×</span>
-                  <!-- <i class="fas fa-times"></i> -->
-                </button>
-              </div>
-            </div>
+           
           </nav>
         </div>
       </li><!-- End Customizer (Only for demo purpose) -->
