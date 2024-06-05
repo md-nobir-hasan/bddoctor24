@@ -15,6 +15,6 @@ use Illuminate\Support\Facades\Route;
     // });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/', [MicelController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
+    Route::get('/', [MicelController::class, 'dashboard'])->name('dashboard');
     Route::resource('/doctor', 'App\Http\Controllers\Backend\DoctorController');
 });
