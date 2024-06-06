@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Backend\DoctorSearchRequest;
 use App\Http\Resources\CategoryResource;
 use App\Http\Resources\ChamberResource;
 use App\Http\Resources\ConsultantTypeResource;
@@ -40,6 +41,13 @@ class FetchDataController extends Controller
         return DesignationResource::collection(Designation::where('status','Active')->get());
     }
    public function doctor(){
+        return new DoctorCollection(Doctor::where('status','Active')->get());
+    }
+   public function DoctorSearch(DoctorSearchRequest $request){
+       $data = $request->validated();
+       $doctors = Doctor::where('status','Active')
+                        ->where('category_id',$data['category'])
+                        ->where('title','like','%'.$data['name'].'%');
         return new DoctorCollection(Doctor::where('status','Active')->get());
     }
 }

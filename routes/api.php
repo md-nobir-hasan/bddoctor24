@@ -16,3 +16,4 @@ Route::get('/consultant-types',[FetchDataController::class,'consultantType']);
 Route::get('/degrees',[FetchDataController::class,'Degree']);
 Route::get('/designations',[FetchDataController::class,'Designation']);
 Route::get('/doctors',[FetchDataController::class,'Doctor']);
+Route::get('/doctors/search',[FetchDataController::class,'DoctorSearch']);
