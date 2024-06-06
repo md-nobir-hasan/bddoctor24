@@ -106,7 +106,7 @@
                                                                 style="width: 49.5287%;">
                                                                 <a href="#" class="dataTable-sorter">Title</a>
                                                             </th>
-                                                            
+
                                                             <th class="hidden lg:table-cell" data-sortable=""
                                                                 style="width: 11.3967%;"><a href="#"
                                                                     class="dataTable-sorter">Serial</a></th>
@@ -131,9 +131,6 @@
                                                                 <td>
                                                                     <a href="javascript:;">
                                                                         <div class="flex flex-wrap flex-row items-center">
-                                                                            <div class="self-center"><img class="h-8 w-8"
-                                                                                    src="../src/img/products/product1.jpg">
-                                                                            </div>
                                                                             <div
                                                                                 class="leading-5 dark:text-gray-300 flex-1 ltr:ml-2 rtl:mr-2 mb-1">
                                                                                 {{ $datum->title }}
@@ -145,7 +142,7 @@
                                                                         </div>
                                                                     </a>
                                                                 </td>
-                                                                
+
 
                                                                 <td class="text-center">{{ $datum->serial }}
                                                                 <td class="text-center">{{ $datum->status }}
