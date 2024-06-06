@@ -67,7 +67,7 @@
                                         class="w-full leading-5 relative py-2 px-4 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600"
                                         id="title">
                                     @error('title')
-                                        <span class="text-danger">{{ $message }}</span>
+                                        <span class="text-[red]">{{ $message }}</span>
                                     @enderror
                                 </div>
 
@@ -81,11 +81,11 @@
                                         @endforeach
                                     </select>
                                     @error('designation_id')
-                                        <span class='text-danger'>{{ $message }}</span>
+                                        <span class='text-[red]'>{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class='flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6'>
-                                    <label for='category_id'>Category</label><span class="text-danger">*</span></label>
+                                    <label for='category_id'>Category</label><span class="text-[red]">*</span></label>
                                     <select name='category_id' id='category_id' class='inline-block w-full leading-5 relative py-2 pl-3 pr-8 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600 select-caret appearance-none' required>
                                         <option value=''>--Select any Category--</option>
                                         @foreach ($Category as $key => $category_id)
@@ -94,7 +94,7 @@
                                         @endforeach
                                     </select>
                                     @error('category_id')
-                                        <span class='text-danger'>{{ $message }}</span>
+                                        <span class='text-[red]'>{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class='flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6'>
@@ -106,7 +106,7 @@
                                             <option value='Other' @selected('Other' == old('gendar'))>Other</option>
                                     </select>
                                     @error('gendar')
-                                        <span class='text-danger'>{{ $message }}</span>
+                                        <span class='text-[red]'>{{ $message }}</span>
                                     @enderror
                                 </div>
 
@@ -116,17 +116,17 @@
                                         value='{{ old('gendar') }}'
                                         class='w-full leading-5 relative py-2 px-4 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600'>
                                     @error('gendar')
-                                        <span class='text-danger'>{{ $message }}</span>
+                                        <span class='text-[red]'>{{ $message }}</span>
                                     @enderror
                                 </div> --}}
-                                
+
                                 <div class='flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6'>
                                     <label for='experience' class='inline-block mb-2'>Experience</label>
                                     <input id='experience' type='text' name='experience'
                                         placeholder='Exp:- Enter Experience' value='{{ old('experience') }}'
                                         class='w-full leading-5 relative py-2 px-4 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600'>
                                     @error('experience')
-                                        <span class='text-danger'>{{ $message }}</span>
+                                        <span class='text-[red]'>{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class='flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6'>
@@ -139,7 +139,7 @@
                                         @endforeach
                                     </select>
                                     @error('degree_id')
-                                        <span class='text-danger'>{{ $message }}</span>
+                                        <span class='text-[red]'>{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class='flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6'>
@@ -152,11 +152,11 @@
                                         @endforeach
                                     </select>
                                     @error('consultant_type_id')
-                                        <span class='text-danger'>{{ $message }}</span>
+                                        <span class='text-[red]'>{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class='flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6'>
-                                    <label for='chamber_id'>Chamber</label><span class="text-danger">*</span></label>
+                                    <label for='chamber_id'>Chamber</label><span class="text-[red]">*</span></label>
                                     <select name='chamber_id' id='chamber_id' class='inline-block w-full leading-5 relative py-2 pl-3 pr-8 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600 select-caret appearance-none' required>
                                         <option value=''>--Select any Chamber--</option>
                                         @foreach ($Chamber as $key => $chamber_id)
@@ -165,12 +165,11 @@
                                         @endforeach
                                     </select>
                                     @error('chamber_id')
-                                        <span class='text-danger'>{{ $message }}</span>
+                                        <span class='text-[red]'>{{ $message }}</span>
                                     @enderror
                                 </div>
-                                <div class='mb-6'>
+                                <div class='flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6'>
                                     <label for='district_id'>District</label>
-
                                     <select name='district_id' id='district_id' class='inline-block w-full leading-5 relative py-2 pl-3 pr-8 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600 select-caret appearance-none'>
                                         <option value='' selected>--Select any District--</option>
                                         @foreach ($District as $key => $district_id)
@@ -179,10 +178,9 @@
                                         @endforeach
                                     </select>
                                     @error('district_id')
-                                        <span class='text-danger'>{{ $message }}</span>
+                                        <span class='text-[red]'>{{ $message }}</span>
                                     @enderror
                                 </div>
-
 
                                 <div class='flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6'>
                                     <label for='other_info' class='inline-block mb-2'>Other Info</label>
@@ -190,7 +188,7 @@
                                         placeholder='Exp:- Enter Other Info' value='{{ old('other_info') }}'
                                         class='w-full leading-5 relative py-2 px-4 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600'>
                                     @error('other_info')
-                                        <span class='text-danger'>{{ $message }}</span>
+                                        <span class='text-[red]'>{{ $message }}</span>
                                     @enderror
                                 </div>
 
@@ -201,7 +199,7 @@
                                         class="w-full leading-5 relative py-2 px-4 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600"
                                         id="serial">
                                     @error('serial')
-                                        <span class="text-danger">{{ $message }}</span>
+                                        <span class="text-[red]">{{ $message }}</span>
                                     @enderror
                                 </div>
 
@@ -214,7 +212,7 @@
                                         <option value="Inactive">Inactive</option>
                                     </select>
                                     @error('status')
-                                        <span class="text-danger">{{ $message }}</span>
+                                        <span class="text-[red]">{{ $message }}</span>
                                     @enderror
                                 </div>
 
