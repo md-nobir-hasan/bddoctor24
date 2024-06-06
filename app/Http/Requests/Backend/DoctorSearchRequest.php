@@ -23,7 +23,7 @@ class DoctorSearchRequest extends FormRequest
     {
         return [
            'name'=>['string','max:500'],
-           'category'=>['exists:categories,id'],
+           'category'=>['exists:categories,title'],
         ];
     }
 }

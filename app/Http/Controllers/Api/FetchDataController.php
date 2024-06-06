@@ -45,9 +45,11 @@ class FetchDataController extends Controller
     }
    public function DoctorSearch(DoctorSearchRequest $request){
        $data = $request->validated();
-       $doctors = Doctor::where('status','Active')
-                        ->where('category_id',$data['category'])
-                        ->where('title','like','%'.$data['name'].'%');
-        return new DoctorCollection(Doctor::where('status','Active')->get());
+       $category = Category::where('status','Active')->where('title',$data['category'])->first();
+       $doctors = Doctor::serachByTitleOrNothing($data['name'])
+       // ->where('category_id',$category->id)
+       ->get();
+    //    dd($data,$category,$doctors);
+        return new DoctorCollection($doctors);
     }
 }
