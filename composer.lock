@@ -2294,16 +2294,16 @@
         },
         {
             "name": "nobir/mini-wizard",
-            "version": "v2.1.0",
+            "version": "v2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/md-nobir-hasan/laravel-mini-wizard.git",
-                "reference": "5534c2e7441a40e1680d85c31fc10fd5c59491cc"
+                "reference": "70d508dc9a65628a630b97755b5a3a9a778231b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/md-nobir-hasan/laravel-mini-wizard/zipball/5534c2e7441a40e1680d85c31fc10fd5c59491cc",
-                "reference": "5534c2e7441a40e1680d85c31fc10fd5c59491cc",
+                "url": "https://api.github.com/repos/md-nobir-hasan/laravel-mini-wizard/zipball/70d508dc9a65628a630b97755b5a3a9a778231b2",
+                "reference": "70d508dc9a65628a630b97755b5a3a9a778231b2",
                 "shasum": ""
             },
             "require": {
@@ -2341,9 +2341,9 @@
             ],
             "support": {
                 "issues": "https://github.com/md-nobir-hasan/laravel-mini-wizard/issues",
-                "source": "https://github.com/md-nobir-hasan/laravel-mini-wizard/tree/v2.1.0"
+                "source": "https://github.com/md-nobir-hasan/laravel-mini-wizard/tree/v2.1.1"
             },
-            "time": "2024-06-03T12:11:09+00:00"
+            "time": "2024-06-06T02:23:35+00:00"
         },
         {
             "name": "nunomaduro/termwind",

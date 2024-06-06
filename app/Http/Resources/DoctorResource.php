@@ -16,7 +16,7 @@ class DoctorResource extends JsonResource
     {
         return [
             'title' => $this->title,
-            'designations'=>DesignationResource::collection($this->Designation),
+            'designations'=>new DesignationResource($this->Designation),
             'categories'=>new CategoryResource($this->Category),
             'gendar'=>$this->gendar,
             'experience'=>$this->experience,
