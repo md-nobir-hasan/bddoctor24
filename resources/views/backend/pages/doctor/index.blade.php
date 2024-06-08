@@ -150,13 +150,13 @@
                                                                     </div>
                                                                 </a>
                                                             </td>
-                                                            <td> {{ $datum->Designation->title }}</td>
-                                                            <td> {{ $datum->Category->title }}</td>
+                                                            <td> {{ $datum->Designation?->title }}</td>
+                                                            <td> {{ $datum->Category?->title }}</td>
                                                             <td> {{ $datum->gendar }}</td>
                                                             <td> {{ $datum->experience }}</td>
-                                                            <td> {{ $datum->Degree->title }}</td>
-                                                            <td> {{ $datum->ConsultantType->title }}</td>
-                                                            <td> {{ $datum->Chamber->title }}</td>
+                                                            <td> {{ $datum->Degree?->title }}</td>
+                                                            <td> {{ $datum->ConsultantType?->title }}</td>
+                                                            <td> {{ $datum->Chamber?->title }}</td>
                                                             <td> {{ $datum->District->title }}</td>
                                                             <td> {{ $datum->other_info }}</td>
                                                             <td class="text-center">{{ $datum->serial }}
