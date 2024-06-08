@@ -22,8 +22,8 @@ class DoctorSearchRequest extends FormRequest
     public function rules(): array
     {
         return [
-           'name'=>['string','max:500'],
-           'category'=>['exists:categories,title'],
+           'name'=>['required','nullable','string','max:500'],
+           'category'=>['required','nullable','exists:categories,title'],
         ];
     }
 }
