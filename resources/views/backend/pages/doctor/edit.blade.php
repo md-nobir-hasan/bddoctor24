@@ -121,11 +121,12 @@
                                 </div>
                                 <div class='flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6'>
                                     <label for='gendar'>Gendar</label>
-                                    <select name='gendar' id='gendar' class='inline-block w-full leading-5 relative py-2 pl-3 pr-8 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600 select-caret appearance-none'>
+                                    <select name='gendar' id='gendar'
+                                        class='inline-block w-full leading-5 relative py-2 pl-3 pr-8 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600 select-caret appearance-none'>
                                         <option value=''>--Select any Designation--</option>
-                                            <option value='Male' @selected('Male' == $datum->gendar)>Male</option>
-                                            <option value='Female' @selected('Female' == $datum->gendar)>Female</option>
-                                            <option value='Other' @selected('Other' == $datum->gendar)>Other</option>
+                                        <option value='Male' @selected('Male' == $datum->gendar)>Male</option>
+                                        <option value='Female' @selected('Female' == $datum->gendar)>Female</option>
+                                        <option value='Other' @selected('Other' == $datum->gendar)>Other</option>
                                     </select>
                                     @error('gendar')
                                         <span class='text-danger'>{{ $message }}</span>
@@ -212,7 +213,7 @@
                                 {{--  serial --}}
                                 <div class="flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6">
                                     <label for="serial" class="inline-block mb-2">serial</label>
-                                    <input type="text" name="serial"
+                                    <input type="number" name="serial"
                                         value="{{ $datum->serial ? $datum->serial : old('serial') }}"
                                         class="w-full leading-5 relative py-2 px-4 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600"
                                         id="serial">

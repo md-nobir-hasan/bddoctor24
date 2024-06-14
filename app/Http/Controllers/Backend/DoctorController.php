@@ -90,6 +90,9 @@ class DoctorController extends Controller
     public function update(UpdateDoctorRequest $request, Doctor $Doctor)
     {
         $data = $request->validated();
+        if(isset($data['img']) && !$data['img']){
+            $data['img'] = $Doctor->img;
+        }
         $this->service->update($Doctor,$data);
 
         return redirect()->route('doctor.index')->with('success', "$request->title is Update successfully");

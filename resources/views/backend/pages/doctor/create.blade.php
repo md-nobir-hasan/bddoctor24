@@ -54,7 +54,7 @@
         <!-- row -->
         <div class="flex flex-wrap flex-row">
             <div class="flex-shrink max-w-full px-4 w-full">
-                <p class="text-xl font-bold mt-3 mb-5 text-center">Doctor</p>
+               <a href="{{route('doctor.index')}}"> <p class="text-xl font-bold mt-3 mb-5 text-center">Doctor</p></a>
             </div>
             <div class="flex-shrink max-w-full px-4 w-full mx-auto lg:w-2/3 mb-6">
                 <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg mb-6">
@@ -237,7 +237,7 @@
                                 <div class="flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6">
                                     <label for="serial" class="inline-block mb-2">serial<span
                                             class="text-[red]">*</span></label>
-                                    <input type="text" name="serial" value="{{ $serial }}"
+                                    <input type="number" name="serial" value="{{ $serial }}"
                                         class="w-full leading-5 relative py-2 px-4 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600"
                                         id="serial">
                                     @error('serial')
