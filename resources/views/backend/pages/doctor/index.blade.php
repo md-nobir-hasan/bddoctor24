@@ -138,7 +138,11 @@
                                                             <td>
                                                                 <a href="javascript:;">
                                                                     <div class="flex flex-wrap flex-row items-center">
-
+                                                                        @if($datum->img)
+                                                                            <div class="self-center">
+                                                                                <img class="h-8 w-8" src="/{{$datum->img}}">
+                                                                            </div>
+                                                                        @endif
                                                                         <div
                                                                             class="leading-5 dark:text-gray-300 flex-1 ltr:ml-2 rtl:mr-2 mb-1">
                                                                             {{ $datum->title }}
@@ -161,8 +165,10 @@
                                                             <td> {{ $datum->other_info }}</td>
                                                             <td class="text-center">{{ $datum->serial }}
                                                             <td class="text-center">{{ $datum->status }}
-                                                            <td class="text-center">{{ $datum->created_at->format('d-m-Y') }}
-                                                            <td class="text-center">{{ $datum->updated_at->format('d-m-Y') }}
+                                                            <td class="text-center">
+                                                                {{ $datum->created_at->format('d-m-Y') }}
+                                                            <td class="text-center">
+                                                                {{ $datum->updated_at->format('d-m-Y') }}
                                                             </td>
 
                                                             <td class="text-center">

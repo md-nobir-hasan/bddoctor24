@@ -3,7 +3,7 @@
 
   /**
    * ------------------------------------------------------------------------
-   *  Move the demo script to the footer before </body> 
+   *  Move the demo script to the footer before </body>
    *  and edit the script for dynamic data needs.
    * ------------------------------------------------------------------------
    */
@@ -41,14 +41,14 @@
       });
     }
   }
-  
+
   // Demo text editor
   const myEditor = function () {
     const text_editor = document.querySelectorAll(".texteditor");
     if ( text_editor != null) {
       for( let i = 0; i < text_editor.length; i++)
       {
-        const simplemde = new SimpleMDE({ 
+        const simplemde = new SimpleMDE({
           element: text_editor[i],
           toolbarTips: false,
           hideIcons: ["guide"]
@@ -181,7 +181,7 @@
           },
           paramName: 'file',
           clickable: true,
-          url: '#'
+          url: '#',
         });
         Dropzone.autoDiscover = false;
       }

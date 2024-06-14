@@ -9,7 +9,7 @@ use Str;
 class Doctor extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'designation_id', 'category_id', 'gendar', 'experience', 'degree_id', 'consultant_type_id', 'chamber_id', 'district_id', 'other_info', 'status', 'serial'];
+    protected $fillable = ['title','img', 'designation_id', 'category_id', 'gendar', 'experience', 'degree_id', 'consultant_type_id', 'chamber_id', 'district_id', 'other_info', 'status', 'serial'];
 
     public function Designation()
     {

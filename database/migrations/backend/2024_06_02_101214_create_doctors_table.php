@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('doctors', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('img',500)->nullable();
             $table->foreignIdFor(App\Models\Backend\Designation::class)->nullable()->constrained()->cascadeOnUpdate()->cascadeOnDelete();
 			$table->foreignIdFor(App\Models\Backend\Category::class)->constrained()->cascadeOnUpdate()->cascadeOnDelete();
 			$table->enum('gendar',['Male','Female','Other'])->nullable();

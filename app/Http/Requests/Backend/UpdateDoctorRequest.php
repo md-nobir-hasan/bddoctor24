@@ -23,6 +23,7 @@ class UpdateDoctorRequest extends FormRequest
     {
         return [
             'title'=> ['required','string','max:255',"unique:doctors,title,{$this->doctor->id}"],
+            'img'=> ['nullable','string','max:500'],
             'designation_id'=> ['nullable'],
 			'category_id'=> ['required'],
 			'gendar'=> ['nullable'],

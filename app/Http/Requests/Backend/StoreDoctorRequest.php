@@ -23,6 +23,7 @@ class StoreDoctorRequest extends FormRequest
     {
         return [
             'title'=> ['required','string','max:255','unique:doctors,title'],
+            'img'=> ['nullable','string','max:500'],
             'status' => ['nullable','in:Active,Inactive'],
             'designation_id'=> ['nullable'],
 			'category_id'=> ['required'],
