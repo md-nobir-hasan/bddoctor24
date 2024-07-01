@@ -38,7 +38,7 @@
 
 @pushOnce('css')
     {{-- Select2 --}}
-    <link href="{{ url('node_modules/select2/dist/css/select2.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/backend/pakages/select2/min.css') }}" rel="stylesheet" />
 @endPushOnce
 
 @pushOnce('js')
@@ -46,8 +46,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     {{-- Select2 --}}
-    <script src="{{ url('node_modules/select2/dist/js/select2.min.js') }}"></script>
+    <script src="{{ asset('assets/backend/pakages/select2/min.js')) }}"></script>
 
     {{-- Pharaonic select2 --}}
-    <script src="{{ url('public/vendor/pharaonic/pharaonic.select2.min.js') }}"></script>
+    {{-- <script src="{{ url('public/vendor/pharaonic/pharaonic.select2.min.js') }}"></script> --}}
 @endPushOnce
