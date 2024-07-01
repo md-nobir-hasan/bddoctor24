@@ -144,49 +144,7 @@
     }
   }
 
-  // Dropzone uploader
-  const myUploader = function () {
-    // dropzone
-    const dropzone_class = document.querySelectorAll(".multiple-dropzone");
-
-    if ( dropzone_class != null) {
-      for( let i = 0; i < dropzone_class.length; i++){
-        const myDropzone = new Dropzone( dropzone_class[i], {
-          addRemoveLinks: true,
-          uploadMultiple: true,
-          parallelUploads: 100,
-          maxFiles: 5,
-          paramName: 'file',
-          clickable: true,
-          url: '#'
-        });
-        Dropzone.autoDiscover = false;
-      }
-    }
-
-    const dropzone_single = document.querySelectorAll(".single-dropzone");
-
-    if ( dropzone_single != null) {
-      for( let i = 0; i < dropzone_single.length; i++){
-        const myDropzone = new Dropzone( dropzone_single[i], {
-          addRemoveLinks: true,
-          uploadMultiple: false,
-          maxFiles: 1,
-          init: function() {
-            this.on('addedfile', function(file) {
-              if (this.files.length > 1) {
-                this.removeFile(this.files[0]);
-              }
-            });
-          },
-          paramName: 'file',
-          clickable: true,
-          url: '#',
-        });
-        Dropzone.autoDiscover = false;
-      }
-    }
-  }
+  
 
   // Lightbox
   const myLightbox = function () {
@@ -210,7 +168,6 @@
   myMaps();
   myEditor();
   myCalendar();
-  myUploader();
   myLightbox();
 
 })();
