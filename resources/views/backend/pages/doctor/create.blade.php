@@ -34,8 +34,8 @@
     {{-- Tagify codding  --}}
     @vite(['resources/js/admin/chart/chart.min.js', 'resources/js/admin/chart/ecommerce.js'])
 
-    <script src="{{asset('backend/js/dropzone.min.js')}}"></script>
-    <script src="{{asset('src/js/vendor.js')}}"></script>
+    <script src="{{ asset('backend/js/dropzone.min.js') }}"></script>
+    <script src="{{ asset('src/js/vendor.js') }}"></script>
     {{-- <script src="/backend/tom-select/tom-select.complete.js"></script> --}}
     {{-- <script>
         new TomSelect("#district_id", {
@@ -54,7 +54,9 @@
         <!-- row -->
         <div class="flex flex-wrap flex-row">
             <div class="flex-shrink max-w-full px-4 w-full">
-               <a href="{{route('doctor.index')}}"> <p class="text-xl font-bold mt-3 mb-5 text-center">Doctor</p></a>
+                <a href="{{ route('doctor.index') }}">
+                    <p class="text-xl font-bold mt-3 mb-5 text-center">Doctor</p>
+                </a>
             </div>
             <div class="flex-shrink max-w-full px-4 w-full mx-auto lg:w-2/3 mb-6">
                 <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg mb-6">
@@ -91,17 +93,10 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 {{--  Title --}}
-                                <div class="flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6">
-                                    <label for="title" class="inline-block mb-2">Title<span
-                                            class="text-[red]">*</span></label>
-                                    <input type="text" name="title" value="{{ old('title') }}"
-                                        class="w-full leading-5 relative py-2 px-4 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600"
-                                        id="title">
-                                    @error('title')
-                                        <span class="text-[red]">{{ $message }}</span>
-                                    @enderror
-                                </div>
+                                <x-forms.text-input name="title"></x-forms.text-input>
+
 
                                 <div class='flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6'>
                                     <label for='designation_id'>Designation</label>
@@ -208,7 +203,10 @@
                                         <span class='text-[red]'>{{ $message }}</span>
                                     @enderror
                                 </div>
-                                <div class='flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6'>
+
+                                {{-- district --}}
+                                <x-forms.select2-input name='district_id' :options="$District" is_required='0'/>
+                                {{-- <div class='flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6'>
                                     <label for='district_id'>District</label>
                                     <select name='district_id' id='district_id'
                                         class='inline-block w-full leading-5 relative py-2 pl-3 pr-8 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600 select-caret appearance-none'>
@@ -221,44 +219,18 @@
                                     @error('district_id')
                                         <span class='text-[red]'>{{ $message }}</span>
                                     @enderror
-                                </div>
+                                </div> --}}
 
-                                <div class='flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6'>
-                                    <label for='other_info' class='inline-block mb-2'>Other Info</label>
-                                    <input id='other_info' type='text' name='other_info'
-                                        placeholder='Exp:- Enter Other Info' value='{{ old('other_info') }}'
-                                        class='w-full leading-5 relative py-2 px-4 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600'>
-                                    @error('other_info')
-                                        <span class='text-[red]'>{{ $message }}</span>
-                                    @enderror
-                                </div>
+                                {{-- Other info --}}
+                                <x-forms.text-input name='other_info' is_required='0'/>
 
                                 {{--  serial --}}
-                                <div class="flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6">
-                                    <label for="serial" class="inline-block mb-2">serial<span
-                                            class="text-[red]">*</span></label>
-                                    <input type="number" name="serial" value="{{ $serial }}"
-                                        class="w-full leading-5 relative py-2 px-4 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600"
-                                        id="serial">
-                                    @error('serial')
-                                        <span class="text-[red]">{{ $message }}</span>
-                                    @enderror
-                                </div>
+                                <x-forms.number-input name="serial" />
 
                                 {{-- Status --}}
-                                <div class="flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6">
-                                    <label for="status" class="inline-block mb-2">Status<span
-                                            class="text-[red]">*</span></label>
-                                    <select id="status"
-                                        class="inline-block w-full leading-5 relative py-2 pl-3 pr-8 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600 select-caret appearance-none">
-                                        <option value="Active">Active</option>
-                                        <option value="Inactive">Inactive</option>
-                                    </select>
-                                    @error('status')
-                                        <span class="text-[red]">{{ $message }}</span>
-                                    @enderror
-                                </div>
+                                <x-forms.select-input name='status' :options="(object)[(object)['id'=>1,'title'=>'Active'],(object)['id'=>0,'title'=>'Inactive']]"/>
 
+                                {{-- save and save new  ( Submit button )  --}}
                                 <div class="flex-shrink max-w-full px-4 w-full text-center">
                                     <button name='redirect' value='back' type="submit"
                                         class="py-2 px-5 inline-block text-center rounded mb-3 leading-5 text-gray-100 bg-indigo-500 border border-indigo-500 hover:text-gray-100 hover:bg-indigo-600 hover:ring-0 hover:border-indigo-600 focus:bg-indigo-600 focus:border-indigo-600 focus:outline-none focus:ring-0">
