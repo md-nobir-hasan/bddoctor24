@@ -1,5 +1,6 @@
 @props([
-    'name' => null,
+    'name',
+    'label' => null,
     'is_required' => true,
     'is_update' => false,
 ])
@@ -7,7 +8,7 @@
     $title = str()->headline(str_replace('_id', '', $name));
 @endphp
 <div class="w-full">
-    <p class="text-lg text-center font-bold">Upload {{ $title }} Image</p>
+    <p class="text-lg text-center font-bold">Upload {{ $label ?? $title }} Image</p>
     <div class="mb-6 max-w-52 mx-auto">
         <div id="imageSingle" class="dropzone single-dropzone mb-6 dz-clickable">
             <div class="dz-message" data-dz-message="">
