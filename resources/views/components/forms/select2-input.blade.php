@@ -11,7 +11,7 @@
 @endphp
 <div class="flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6">
 
-    <label for="{{ $name }}" class="inline-block mb-2">{{ $title }}
+    <label for="{{ $name }}" class="inline-block">{{ $title }}
         @if ($is_required)
             <span class="text-[red]">*</span>
         @endif
@@ -38,16 +38,26 @@
 
 @pushOnce('css')
     {{-- Select2 --}}
-    <link href="{{ asset('assets/backend/pakages/select2/min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/backend/libraries/select2/min.css') }}" rel="stylesheet" />
+    <style>
+        .selection .select2-selection{
+            display: flex !important;
+            align-items: center !important;
+            min-height: 37px !important;
+        }
+    </style>
 @endPushOnce
 
 @pushOnce('js')
     {{-- jQuery --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{{ asset('assets/backend/libraries/jquery/min.js') }}"></script>
 
     {{-- Select2 --}}
-    <script src="{{ asset('assets/backend/pakages/select2/min.js')) }}"></script>
+    <script src="{{ asset('assets/backend/libraries/select2/min.js') }}"></script>
 
-    {{-- Pharaonic select2 --}}
-    {{-- <script src="{{ url('public/vendor/pharaonic/pharaonic.select2.min.js') }}"></script> --}}
+  <script>
+      $(document).ready(function() {
+        $('.select2').select2();
+    });
+  </script>
 @endPushOnce

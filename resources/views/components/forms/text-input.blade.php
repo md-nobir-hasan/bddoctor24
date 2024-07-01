@@ -6,12 +6,12 @@
 
 @php
     $title = str()->headline(str_replace('_id', '', $name));
-   
+
 @endphp
 
 <div class="flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6">
 
-    <label for="{{ $name }}" class="inline-block mb-2">{{ $title }}
+    <label for="{{ $name }}" class="inline-block">{{ $title }}
         @if ($is_required)
             <span class="text-[red]">*</span>
         @endif
