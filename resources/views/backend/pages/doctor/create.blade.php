@@ -64,7 +64,7 @@
                             <form method="POST" action="{{ route('doctor.store') }}" class="flex flex-wrap flex-row -mx-4">
                                 @csrf
                                 {{-- image uploader  --}}
-                                <x-forms.dropzone-multiple name='doctor' is_required='0'/>
+                                <x-forms.dropzone-single name='doctor' is_required='0'/>
 
                                 {{--  Title --}}
                                 <x-forms.text-input name="title"></x-forms.text-input>
@@ -77,14 +77,14 @@
 
 
                                 {{-- Gendar --}}
-                                <x-forms.select-input name='status' :options="(object)[(object)['id'=>'Male','title'=>'Male'],(object)['id'=>'Female','title'=>'Female'],(object)['id'=>'Other','title'=>'Other']]"/>
+                                <x-forms.select-input name='gendar' :options="(object)[(object)['id'=>'Male','title'=>'Male'],(object)['id'=>'Female','title'=>'Female'],(object)['id'=>'Other','title'=>'Other']]"/>
 
                                  {{-- Experience --}}
                                  <x-forms.text-input name='experience' is_required='0'/>
 
 
                                 {{-- Degree --}}
-                                 <x-forms.select2-input name='consultant_type_id' :options="$Degree" is_required='0'/>
+                                 <x-forms.select2-input name='degree_id' :options="$Degree" is_required='0'/>
 
                                  {{-- ConsultantType --}}
                                  <x-forms.select2-input name='consultant_type_id' :options="$ConsultantType" is_required='0'/>
