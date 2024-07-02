@@ -28,7 +28,7 @@
             @endforeach
         @else
             @foreach ($options as $option)
-                <option value="{{ $option->{$value_key} }}" @selected($option->{$value_key} == old($name))>{{ $option->{$text_key} }}
+                <option value="{{ $option->{$value_key} }}" @selected($option->{$value_key} == (old($name) ?? $default))>{{ $option->{$text_key} }}
                 </option>
             @endforeach
         @endif

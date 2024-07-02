@@ -3,6 +3,7 @@
     'label' => null,
     'is_required' => true,
     'is_update' => false,
+    'default' => null,
 ])
 
 @php
@@ -19,7 +20,12 @@
     </label>
     <textarea name="{{ $name }}" @required($is_required)  id="{{ $name }}" placeholder="Please, enter {{ str()->lower($title) }}"
         class="w-full leading-5 relative py-2 px-4 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600"
-        id="exampleTextarea1" rows="5">  @if ($is_update) {!! $data->{$name}  !!} @endif
+        id="exampleTextarea1" rows="5">
+         @if ($is_update)
+            {!! $data->{$name}  !!}
+         @else
+            {{old($name) ?? $default}}
+         @endif
     </textarea>
 
     @error('{{ $name }}')

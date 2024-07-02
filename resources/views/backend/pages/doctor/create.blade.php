@@ -37,7 +37,7 @@
                                 <x-form.text name="title" label='Label Working'/>
 
                                 {{-- Degree --}}
-                                <x-form.select2 name='designation_id' :options="$Designation" is_required='0'/>
+                                <x-form.select2 name='designation_id' :options="$Designation" is_required='0' />
 
                                 {{-- Category --}}
                                 <x-form.select2 name='category_id' :options="$Category" />

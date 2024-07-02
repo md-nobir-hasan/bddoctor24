@@ -4,7 +4,7 @@
     'label' => null,
     'is_required' => true,
     'is_update' => false,
-
+    'default' => null,
 ])
 
 @php
@@ -21,7 +21,7 @@
              @if ($is_update)
                 @checked($datum->{$name})
               @else
-                @checked(old($name))
+                @checked((old($name) ?? $default))
              @endif
              >
             <span>

@@ -6,6 +6,7 @@
     'options',
     'value_key' => 'id',
     'text_key' => 'title',
+    'default' => null,
 ])
 @php
     $title = str()->headline(str_replace('_id', '', $name));
@@ -28,7 +29,7 @@
             @endforeach
         @else
             @foreach ($options as $option)
-                <option value="{{ $option->{$value_key} }}" @selected($option->{$value_key} == old($name) )>{{ $option->{$text_key} }}
+                <option value="{{ $option->{$value_key} }}" @selected($option->{$value_key} == (old($name) ?? $default) )>{{ $option->{$text_key} }}
                 </option>
             @endforeach
         @endif
